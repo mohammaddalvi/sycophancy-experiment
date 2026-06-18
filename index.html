@@ -6,7 +6,6 @@
 <title>Investment Decision Study</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background: #f0f4f8;
@@ -14,476 +13,107 @@
     min-height: 100vh;
     padding: 30px 16px;
   }
-
-  .shell {
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
-  /* ── Header ── */
-  .header {
-    text-align: center;
-    margin-bottom: 28px;
-  }
-  .header .logo {
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #718096;
-    margin-bottom: 6px;
-  }
-  .header h1 {
-    font-size: 22px;
-    font-weight: 700;
-    color: #1a202c;
-  }
-
-  /* ── Progress ── */
-  .progress-wrap {
-    margin-bottom: 28px;
-  }
-  .progress-meta {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    color: #718096;
-    margin-bottom: 6px;
-  }
-  .progress-track {
-    background: #e2e8f0;
-    height: 6px;
-    border-radius: 99px;
-    overflow: hidden;
-  }
-  .progress-fill {
-    background: linear-gradient(90deg, #4299e1, #3182ce);
-    height: 100%;
-    border-radius: 99px;
-    transition: width 0.5s ease;
-  }
-
-  /* ── Card ── */
-  .card {
-    background: white;
-    border-radius: 16px;
-    padding: 36px 40px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    display: none;
-  }
+  .shell { max-width: 700px; margin: 0 auto; }
+  .header { text-align: center; margin-bottom: 28px; }
+  .header .logo { font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #718096; margin-bottom: 6px; }
+  .header h1 { font-size: 22px; font-weight: 700; color: #1a202c; }
+  .progress-wrap { margin-bottom: 28px; }
+  .progress-meta { display: flex; justify-content: space-between; font-size: 12px; color: #718096; margin-bottom: 6px; }
+  .progress-track { background: #e2e8f0; height: 6px; border-radius: 99px; overflow: hidden; }
+  .progress-fill { background: linear-gradient(90deg, #4299e1, #3182ce); height: 100%; border-radius: 99px; transition: width 0.5s ease; }
+  .card { background: white; border-radius: 16px; padding: 36px 40px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); display: none; }
   .card.active { display: block; }
-
-  .card-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: #1a202c;
-    margin-bottom: 6px;
-  }
-  .card-subtitle {
-    font-size: 14px;
-    color: #718096;
-    margin-bottom: 28px;
-    line-height: 1.6;
-  }
-
-  /* ── Consent ── */
-  .consent-block {
-    background: #f7fafc;
-    border-radius: 10px;
-    padding: 20px 24px;
-    margin-bottom: 20px;
-  }
-  .consent-block h4 {
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    color: #4a5568;
-    margin-bottom: 8px;
-  }
-  .consent-block p {
-    font-size: 14px;
-    color: #4a5568;
-    line-height: 1.7;
-  }
-  .check-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 0;
-    border-bottom: 1px solid #e2e8f0;
-    cursor: pointer;
-  }
+  .card-title { font-size: 20px; font-weight: 700; color: #1a202c; margin-bottom: 6px; }
+  .card-subtitle { font-size: 14px; color: #718096; margin-bottom: 28px; line-height: 1.6; }
+  .consent-block { background: #f7fafc; border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; }
+  .consent-block h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #4a5568; margin-bottom: 8px; }
+  .consent-block p { font-size: 14px; color: #4a5568; line-height: 1.7; }
+  .check-item { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #e2e8f0; cursor: pointer; }
   .check-item:last-child { border-bottom: none; }
-  .check-item input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    accent-color: #3182ce;
-    cursor: pointer;
-    flex-shrink: 0;
-  }
-  .check-item label {
-    font-size: 14px;
-    color: #2d3748;
-    cursor: pointer;
-    line-height: 1.5;
-  }
-
-  /* ── Scenario table ── */
-  .scenario-intro {
-    background: #ebf8ff;
-    border-left: 4px solid #3182ce;
-    border-radius: 0 8px 8px 0;
-    padding: 16px 20px;
-    margin-bottom: 24px;
-  }
-  .scenario-intro p {
-    font-size: 15px;
-    color: #2b6cb0;
-    line-height: 1.6;
-  }
+  .check-item input[type="checkbox"] { width: 18px; height: 18px; accent-color: #3182ce; cursor: pointer; flex-shrink: 0; }
+  .check-item label { font-size: 14px; color: #2d3748; cursor: pointer; line-height: 1.5; }
+  .scenario-intro { background: #ebf8ff; border-left: 4px solid #3182ce; border-radius: 0 8px 8px 0; padding: 16px 20px; margin-bottom: 24px; }
+  .scenario-intro p { font-size: 15px; color: #2b6cb0; line-height: 1.6; }
   .scenario-intro strong { color: #1a365d; }
-
-  .compare-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 20px;
-  }
-  .option-card {
-    border: 2px solid #e2e8f0;
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  .option-card-header {
-    padding: 14px 18px;
-    font-weight: 700;
-    font-size: 14px;
-  }
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+  .option-card { border: 2px solid #e2e8f0; border-radius: 12px; overflow: hidden; }
+  .option-card-header { padding: 14px 18px; font-weight: 700; font-size: 14px; }
   .option-a .option-card-header { background: #fff5f5; color: #c53030; }
   .option-b .option-card-header { background: #f0fff4; color: #276749; }
   .option-card-body { padding: 16px 18px; }
-  .option-card-body .row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 8px 0;
-    border-bottom: 1px solid #f0f0f0;
-    gap: 12px;
-  }
+  .option-card-body .row { display: flex; justify-content: space-between; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid #f0f0f0; gap: 12px; }
   .option-card-body .row:last-child { border-bottom: none; }
-  .option-card-body .row .label {
-    font-size: 12px;
-    color: #718096;
-    flex: 1;
-    line-height: 1.4;
-  }
-  .option-card-body .row .value {
-    font-size: 13px;
-    font-weight: 600;
-    color: #2d3748;
-    text-align: right;
-  }
-  .tag {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 99px;
-    font-size: 11px;
-    font-weight: 700;
-  }
+  .option-card-body .row .label { font-size: 12px; color: #718096; flex: 1; line-height: 1.4; }
+  .option-card-body .row .value { font-size: 13px; font-weight: 600; color: #2d3748; text-align: right; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 99px; font-size: 11px; font-weight: 700; }
   .tag-red { background: #fff5f5; color: #c53030; }
   .tag-green { background: #f0fff4; color: #276749; }
-
-  .fee-note {
-    background: #fffbeb;
-    border: 1px solid #f6e05e;
-    border-radius: 10px;
-    padding: 14px 18px;
-    margin-top: 16px;
-  }
-  .fee-note p {
-    font-size: 13px;
-    color: #744210;
-    line-height: 1.6;
-  }
+  .fee-note { background: #fffbeb; border: 1px solid #f6e05e; border-radius: 10px; padding: 14px 18px; margin-top: 16px; }
+  .fee-note p { font-size: 13px; color: #744210; line-height: 1.6; }
   .fee-note strong { color: #5f370e; }
-
-  /* ── Choice buttons ── */
   .choice-wrap { display: flex; flex-direction: column; gap: 14px; margin: 24px 0 0; }
-
-  .choice-btn {
-    border: 2px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 18px 22px;
-    cursor: pointer;
-    transition: all 0.2s;
-    background: white;
-    text-align: left;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
+  .choice-btn { border: 2px solid #e2e8f0; border-radius: 12px; padding: 18px 22px; cursor: pointer; transition: all 0.2s; background: white; text-align: left; width: 100%; display: flex; align-items: center; gap: 16px; }
   .choice-btn:hover { border-color: #90cdf4; background: #ebf8ff; }
-  .choice-btn.selected { border-color: #3182ce; background: #ebf8ff; }
-  .choice-btn.selected-b { border-color: #38a169; background: #f0fff4; }
-
-  .choice-dot {
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    border: 2px solid #cbd5e0;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s;
-  }
-  .choice-btn.selected .choice-dot,
-  .choice-btn.selected-b .choice-dot {
-    border-color: #3182ce;
-    background: #3182ce;
-  }
-  .choice-dot-inner {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: white;
-    display: none;
-  }
-  .choice-btn.selected .choice-dot-inner,
-  .choice-btn.selected-b .choice-dot-inner { display: block; }
-
+  .choice-btn.sel-a { border-color: #3182ce; background: #ebf8ff; }
+  .choice-btn.sel-b { border-color: #38a169; background: #f0fff4; }
+  .choice-dot { width: 22px; height: 22px; border-radius: 50%; border: 2px solid #cbd5e0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+  .choice-btn.sel-a .choice-dot, .choice-btn.sel-b .choice-dot { border-color: #3182ce; background: #3182ce; }
+  .choice-dot-inner { width: 10px; height: 10px; border-radius: 50%; background: white; display: none; }
+  .choice-btn.sel-a .choice-dot-inner, .choice-btn.sel-b .choice-dot-inner { display: block; }
   .choice-text { flex: 1; }
-  .choice-text .choice-title {
-    font-size: 15px;
-    font-weight: 700;
-    color: #1a202c;
-    margin-bottom: 4px;
-  }
-  .choice-text .choice-desc {
-    font-size: 13px;
-    color: #718096;
-    line-height: 1.5;
-  }
-
-  /* ── Scale ── */
-  .scale-label-row {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    color: #718096;
-    margin-bottom: 10px;
-  }
-  .scale-row {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 6px;
-  }
-  .scale-btn {
-    flex: 1;
-    aspect-ratio: 1;
-    border: 2px solid #e2e8f0;
-    border-radius: 10px;
-    background: white;
-    font-size: 15px;
-    font-weight: 700;
-    color: #4a5568;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  .choice-title { font-size: 15px; font-weight: 700; color: #1a202c; margin-bottom: 4px; }
+  .choice-desc { font-size: 13px; color: #718096; line-height: 1.5; }
+  .scale-label-row { display: flex; justify-content: space-between; font-size: 12px; color: #718096; margin-bottom: 10px; }
+  .scale-row { display: flex; gap: 8px; margin-bottom: 6px; }
+  .scale-btn { flex: 1; aspect-ratio: 1; border: 2px solid #e2e8f0; border-radius: 10px; background: white; font-size: 15px; font-weight: 700; color: #4a5568; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; }
   .scale-btn:hover { border-color: #90cdf4; background: #ebf8ff; color: #2b6cb0; }
   .scale-btn.active { border-color: #3182ce; background: #3182ce; color: white; }
-
-  /* ── AI response ── */
-  .ai-box {
-    background: #f7fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 24px;
-    margin: 24px 0;
-    display: none;
-  }
-  .ai-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 14px;
-  }
-  .ai-avatar {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: #3182ce;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 16px;
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-  .ai-name {
-    font-size: 14px;
-    font-weight: 700;
-    color: #2d3748;
-  }
-  .ai-role {
-    font-size: 12px;
-    color: #718096;
-  }
-  .ai-text {
-    font-size: 15px;
-    color: #2d3748;
-    line-height: 1.8;
-  }
-
-  .loading-box {
-    text-align: center;
-    padding: 40px 20px;
-    display: none;
-  }
-  .spinner {
-    width: 44px;
-    height: 44px;
-    border: 4px solid #e2e8f0;
-    border-top-color: #3182ce;
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-    margin: 0 auto 16px;
-  }
+  .ai-box { background: #f7fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; margin: 24px 0; display: none; }
+  .ai-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .ai-avatar { width: 36px; height: 36px; border-radius: 50%; background: #3182ce; display: flex; align-items: center; justify-content: center; color: white; font-size: 16px; font-weight: 700; flex-shrink: 0; }
+  .ai-name { font-size: 14px; font-weight: 700; color: #2d3748; }
+  .ai-role { font-size: 12px; color: #718096; }
+  .ai-text { font-size: 15px; color: #2d3748; line-height: 1.8; }
+  .loading-box { text-align: center; padding: 40px 20px; display: none; }
+  .spinner { width: 44px; height: 44px; border: 4px solid #e2e8f0; border-top-color: #3182ce; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px; }
   @keyframes spin { to { transform: rotate(360deg); } }
   .loading-box p { font-size: 14px; color: #718096; }
-
-  /* ── Divider ── */
-  .divider {
-    border: none;
-    border-top: 1px solid #e2e8f0;
-    margin: 28px 0;
-  }
-
-  .question-label {
-    font-size: 15px;
-    font-weight: 600;
-    color: #2d3748;
-    margin-bottom: 6px;
-  }
-  .question-hint {
-    font-size: 13px;
-    color: #718096;
-    margin-bottom: 16px;
-    line-height: 1.5;
-  }
-
-  /* ── Button ── */
-  .primary-btn {
-    display: block;
-    width: 100%;
-    padding: 16px;
-    background: #3182ce;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.2s;
-    margin-top: 28px;
-    letter-spacing: 0.3px;
-  }
+  .divider { border: none; border-top: 1px solid #e2e8f0; margin: 28px 0; }
+  .question-label { font-size: 15px; font-weight: 600; color: #2d3748; margin-bottom: 6px; }
+  .question-hint { font-size: 13px; color: #718096; margin-bottom: 16px; line-height: 1.5; }
+  .primary-btn { display: block; width: 100%; padding: 16px; background: #3182ce; color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s; margin-top: 28px; letter-spacing: 0.3px; }
   .primary-btn:hover { background: #2c5282; }
-  .primary-btn:disabled { background: #a0aec0; cursor: not-allowed; }
-
-  /* ── Error ── */
-  .err {
-    font-size: 13px;
-    color: #e53e3e;
-    margin-top: 10px;
-    display: none;
-    padding: 10px 14px;
-    background: #fff5f5;
-    border-radius: 8px;
-    border: 1px solid #fed7d7;
-  }
-
-  /* ── Thank you ── */
-  .thankyou-icon {
-    width: 72px;
-    height: 72px;
-    background: #f0fff4;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    font-size: 36px;
-  }
-  .thankyou-title {
-    font-size: 24px;
-    font-weight: 700;
-    color: #276749;
-    text-align: center;
-    margin-bottom: 8px;
-  }
-  .thankyou-sub {
-    text-align: center;
-    font-size: 14px;
-    color: #718096;
-    margin-bottom: 28px;
-  }
-  .debrief-box {
-    background: #f7fafc;
-    border-radius: 12px;
-    padding: 24px;
-    margin-bottom: 16px;
-  }
-  .debrief-box h4 {
-    font-size: 14px;
-    font-weight: 700;
-    color: #2d3748;
-    margin-bottom: 10px;
-  }
-  .debrief-box p {
-    font-size: 14px;
-    color: #4a5568;
-    line-height: 1.7;
-  }
-  .debrief-highlight {
-    background: #f0fff4;
-    border: 1px solid #9ae6b4;
-    border-radius: 10px;
-    padding: 16px 20px;
-    margin-top: 16px;
-  }
-  .debrief-highlight p {
-    font-size: 14px;
-    color: #276749;
-    line-height: 1.7;
-  }
-
-  @media (max-width: 540px) {
-    .card { padding: 24px 20px; }
-    .compare-grid { grid-template-columns: 1fr; }
-    .scale-btn { font-size: 13px; }
-  }
+  .err { font-size: 13px; color: #e53e3e; margin-top: 10px; display: none; padding: 10px 14px; background: #fff5f5; border-radius: 8px; border: 1px solid #fed7d7; }
+  .radio-group { display: flex; flex-direction: column; gap: 10px; margin: 12px 0 0; }
+  .radio-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 2px solid #e2e8f0; border-radius: 10px; cursor: pointer; transition: all 0.2s; }
+  .radio-item:hover { border-color: #90cdf4; background: #ebf8ff; }
+  .radio-item.active { border-color: #3182ce; background: #ebf8ff; }
+  .radio-item input[type="radio"] { accent-color: #3182ce; width: 16px; height: 16px; flex-shrink: 0; }
+  .radio-item label { font-size: 14px; color: #2d3748; cursor: pointer; }
+  .text-input { width: 100%; padding: 12px 16px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 14px; color: #2d3748; transition: border-color 0.2s; outline: none; margin-top: 12px; }
+  .text-input:focus { border-color: #3182ce; }
+  .thankyou-icon { width: 72px; height: 72px; background: #f0fff4; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 36px; }
+  .thankyou-title { font-size: 24px; font-weight: 700; color: #276749; text-align: center; margin-bottom: 8px; }
+  .thankyou-sub { text-align: center; font-size: 14px; color: #718096; margin-bottom: 28px; }
+  .debrief-box { background: #f7fafc; border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+  .debrief-box h4 { font-size: 14px; font-weight: 700; color: #2d3748; margin-bottom: 10px; }
+  .debrief-box p { font-size: 14px; color: #4a5568; line-height: 1.7; }
+  .debrief-highlight { background: #f0fff4; border: 1px solid #9ae6b4; border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
+  .debrief-highlight p { font-size: 14px; color: #276749; line-height: 1.7; }
+  @media (max-width: 540px) { .card { padding: 24px 20px; } .compare-grid { grid-template-columns: 1fr; } .scale-btn { font-size: 13px; } }
 </style>
 </head>
 <body>
 <div class="shell">
 
-  <!-- Header -->
   <div class="header">
     <div class="logo">Universiti Tunku Abdul Rahman · UTAR</div>
     <h1>Investment Decision Study</h1>
   </div>
 
-  <!-- Progress -->
   <div class="progress-wrap">
     <div class="progress-meta">
-      <span id="step-label">Step 1 of 6</span>
+      <span id="step-label">Step 1 of 7</span>
       <span id="pct-label">10%</span>
     </div>
     <div class="progress-track">
@@ -491,155 +121,98 @@
     </div>
   </div>
 
-  <!-- ══ SECTION 1: CONSENT ══ -->
+  <!-- S1: CONSENT -->
   <div class="card active" id="s1">
     <div class="card-title">Informed Consent</div>
-    <div class="card-subtitle">Please read the following information before participating.</div>
-
+    <div class="card-subtitle">Please read the following information carefully before participating.</div>
     <div class="consent-block">
       <h4>About this study</h4>
-      <p>You are invited to take part in a research study on <strong>financial decision-making and AI advisory systems</strong>. The study takes approximately <strong>8 to 10 minutes</strong> to complete.</p>
+      <p>You are invited to take part in a research study on <strong>financial decision-making and AI advisory systems</strong>. The study takes approximately <strong>8 to 10 minutes</strong>.</p>
     </div>
-
     <div class="consent-block">
       <h4>What you will do</h4>
       <p>You will review two investment options, receive a brief assessment from an AI financial advisor, and answer a short set of questions about your decision.</p>
     </div>
-
     <div class="consent-block">
       <h4>Confidentiality</h4>
       <p>Your responses are completely <strong>anonymous</strong>. No personally identifying information is collected at any point.</p>
     </div>
-
     <div class="consent-block">
       <h4>Voluntary participation</h4>
       <p>Participation is entirely voluntary. You may withdraw at any time without penalty.</p>
     </div>
-
     <hr class="divider">
     <div class="question-label">Please confirm the following:</div>
-
-    <div class="check-item">
-      <input type="checkbox" id="c1">
-      <label for="c1">I am 18 years of age or older</label>
-    </div>
-    <div class="check-item">
-      <input type="checkbox" id="c2">
-      <label for="c2">I have read and understood the information above</label>
-    </div>
-    <div class="check-item">
-      <input type="checkbox" id="c3">
-      <label for="c3">I agree to participate in this study voluntarily</label>
-    </div>
-
+    <div class="check-item"><input type="checkbox" id="c1"><label for="c1">I am 18 years of age or older</label></div>
+    <div class="check-item"><input type="checkbox" id="c2"><label for="c2">I have read and understood the information above</label></div>
+    <div class="check-item"><input type="checkbox" id="c3"><label for="c3">I agree to participate in this study voluntarily</label></div>
     <div class="err" id="consent-err">Please tick all three boxes to continue.</div>
     <button class="primary-btn" onclick="checkConsent()">I Agree — Begin Study →</button>
   </div>
 
-  <!-- ══ SECTION 2: SCENARIO ══ -->
+  <!-- S2: SCENARIO -->
   <div class="card" id="s2">
     <div class="card-title">Investment Scenario</div>
-    <div class="card-subtitle">Read the following carefully before making your decision.</div>
-
+    <div class="card-subtitle">Please read the following carefully before making your decision.</div>
     <div class="scenario-intro">
-      <p>Imagine you have <strong>RM 50,000</strong> in savings and you want to invest it for <strong>3 years</strong>. A financial platform offers you two investment options. Review the details below.</p>
+      <p>Imagine you have <strong>$50,000</strong> in savings and want to invest it for <strong>3 years</strong>. A financial platform offers you two options. Review the details below.</p>
     </div>
-
     <div class="compare-grid">
-      <!-- Option A -->
       <div class="option-card option-a">
         <div class="option-card-header">Option A — High-Growth Stock Fund</div>
         <div class="option-card-body">
-          <div class="row">
-            <span class="label">Average yearly gain</span>
-            <span class="value">14%</span>
-          </div>
-          <div class="row">
-            <span class="label">Risk level</span>
-            <span class="value"><span class="tag tag-red">Very High</span></span>
-          </div>
-          <div class="row">
-            <span class="label">Annual fees</span>
-            <span class="value">3.5% / year</span>
-          </div>
-          <div class="row">
-            <span class="label">Extra income</span>
-            <span class="value">None</span>
-          </div>
-          <div class="row">
-            <span class="label">Fees on RM 50,000</span>
-            <span class="value">RM 1,750 / year</span>
-          </div>
+          <div class="row"><span class="label">Average yearly gain</span><span class="value">14%</span></div>
+          <div class="row"><span class="label">Risk level</span><span class="value"><span class="tag tag-red">Very High</span></span></div>
+          <div class="row"><span class="label">Annual fees</span><span class="value">3.5% / year</span></div>
+          <div class="row"><span class="label">Extra income</span><span class="value">None</span></div>
+          <div class="row"><span class="label">Fees on $50,000</span><span class="value">$1,750 / year</span></div>
+          <div class="row"><span class="label">Net return after fees</span><span class="value">~10.5% / year</span></div>
         </div>
       </div>
-
-      <!-- Option B -->
       <div class="option-card option-b">
         <div class="option-card-header">Option B — Steady Growth Fund</div>
         <div class="option-card-body">
-          <div class="row">
-            <span class="label">Average yearly gain</span>
-            <span class="value">9%</span>
-          </div>
-          <div class="row">
-            <span class="label">Risk level</span>
-            <span class="value"><span class="tag tag-green">Low</span></span>
-          </div>
-          <div class="row">
-            <span class="label">Annual fees</span>
-            <span class="value">0.3% / year</span>
-          </div>
-          <div class="row">
-            <span class="label">Extra income</span>
-            <span class="value">+2% / year</span>
-          </div>
-          <div class="row">
-            <span class="label">Fees on RM 50,000</span>
-            <span class="value">RM 150 / year</span>
-          </div>
+          <div class="row"><span class="label">Average yearly gain</span><span class="value">9%</span></div>
+          <div class="row"><span class="label">Risk level</span><span class="value"><span class="tag tag-green">Low</span></span></div>
+          <div class="row"><span class="label">Annual fees</span><span class="value">0.3% / year</span></div>
+          <div class="row"><span class="label">Extra income</span><span class="value">+2% / year</span></div>
+          <div class="row"><span class="label">Fees on $50,000</span><span class="value">$150 / year</span></div>
+          <div class="row"><span class="label">Net return after fees</span><span class="value">~10.7% / year</span></div>
         </div>
       </div>
     </div>
-
     <div class="fee-note">
-      <p><strong>What do fees mean?</strong> Every year, the platform deducts a percentage of your investment as a service charge. Option A deducts <strong>RM 1,750</strong> from your account each year. Option B deducts only <strong>RM 150</strong> per year — and also pays you an extra <strong>RM 1,000</strong> annually from the fund.</p>
+      <p><strong>What do fees mean?</strong> Every year, the platform deducts a percentage of your investment as a service charge. Option A deducts <strong>$1,750</strong> from your account each year. Option B deducts only <strong>$150</strong> per year — and also pays you an extra <strong>$1,000</strong> annually from the fund.</p>
     </div>
-
-    <button class="primary-btn" onclick="goTo('s3', 2)">I Have Read This — Continue →</button>
+    <button class="primary-btn" onclick="goTo('s3', 1)">I Have Read This — Continue →</button>
   </div>
 
-  <!-- ══ SECTION 3: INITIAL PREFERENCE ══ -->
+  <!-- S3: INITIAL PREFERENCE -->
   <div class="card" id="s3">
     <div class="card-title">Your Initial Preference</div>
     <div class="card-subtitle">Based on what you just read, which option do you currently prefer? There is no right or wrong answer at this stage.</div>
-
     <div class="choice-wrap">
       <button class="choice-btn" id="btn-a" onclick="pickPref('Option A')">
         <div class="choice-dot"><div class="choice-dot-inner"></div></div>
         <div class="choice-text">
           <div class="choice-title">Option A — High-Growth Stock Fund</div>
-          <div class="choice-desc">14% yearly gain · Very high risk · RM 1,750 fees/year · No extra income</div>
+          <div class="choice-desc">14% yearly gain · Very high risk · $1,750 fees/year · No extra income · Net ~10.5%</div>
         </div>
       </button>
       <button class="choice-btn" id="btn-b" onclick="pickPref('Option B')">
         <div class="choice-dot"><div class="choice-dot-inner"></div></div>
         <div class="choice-text">
           <div class="choice-title">Option B — Steady Growth Fund</div>
-          <div class="choice-desc">9% yearly gain · Low risk · RM 150 fees/year · +RM 1,000 extra/year</div>
+          <div class="choice-desc">9% yearly gain · Low risk · $150 fees/year · +$1,000 extra/year · Net ~10.7%</div>
         </div>
       </button>
     </div>
-
     <div class="err" id="pref-err">Please select an option to continue.</div>
-
     <div id="conf-wrap" style="display:none; margin-top:32px;">
       <hr class="divider" style="margin-top:0;">
       <div class="question-label">How confident are you in this preference?</div>
       <div class="question-hint">Select a number from 1 (not at all confident) to 7 (extremely confident).</div>
-      <div class="scale-label-row">
-        <span>Not at all confident</span>
-        <span>Extremely confident</span>
-      </div>
+      <div class="scale-label-row"><span>Not at all confident</span><span>Extremely confident</span></div>
       <div class="scale-row" id="conf-scale">
         <button class="scale-btn" onclick="pickScale('prior_belief_confidence', 1, this)">1</button>
         <button class="scale-btn" onclick="pickScale('prior_belief_confidence', 2, this)">2</button>
@@ -654,16 +227,14 @@
     </div>
   </div>
 
-  <!-- ══ SECTION 4: AI RESPONSE ══ -->
+  <!-- S4: AI RESPONSE -->
   <div class="card" id="s4">
     <div class="card-title">AI Financial Advisor</div>
-    <div class="card-subtitle">An AI financial advisor has reviewed the investment options and your preference. Please read the assessment carefully before proceeding.</div>
-
+    <div class="card-subtitle">An AI financial advisor has reviewed the investment options and your preference. Please read the assessment carefully.</div>
     <div class="loading-box" id="loading">
       <div class="spinner"></div>
       <p>Generating your personalised assessment...</p>
     </div>
-
     <div class="ai-box" id="ai-box">
       <div class="ai-header">
         <div class="ai-avatar">AI</div>
@@ -674,22 +245,17 @@
       </div>
       <div class="ai-text" id="ai-text"></div>
     </div>
-
-    <button class="primary-btn" id="ai-next-btn" onclick="goTo('s5', 4)" style="display:none;">Continue to Questions →</button>
+    <button class="primary-btn" id="ai-next-btn" onclick="goTo('s5', 3)" style="display:none;">Continue to Questions →</button>
   </div>
 
-  <!-- ══ SECTION 5: MEASUREMENT ══ -->
+  <!-- S5: MEASUREMENT -->
   <div class="card" id="s5">
     <div class="card-title">Your Responses</div>
     <div class="card-subtitle">Please answer the following questions honestly based on your experience.</div>
 
-    <!-- Manipulation check -->
     <div class="question-label">1. To what extent did the AI advisor agree with your initial investment preference?</div>
     <div class="question-hint">1 = Did not agree at all &nbsp;·&nbsp; 7 = Completely agreed with my preference</div>
-    <div class="scale-label-row">
-      <span>Did not agree at all</span>
-      <span>Completely agreed</span>
-    </div>
+    <div class="scale-label-row"><span>Did not agree at all</span><span>Completely agreed</span></div>
     <div class="scale-row">
       <button class="scale-btn" onclick="pickScale('manipulation_check', 1, this)">1</button>
       <button class="scale-btn" onclick="pickScale('manipulation_check', 2, this)">2</button>
@@ -701,37 +267,29 @@
     </div>
 
     <hr class="divider">
-
-    <!-- Final choice -->
     <div class="question-label">2. After reading the AI advisor's assessment, which option do you now choose?</div>
     <div class="question-hint">You may change your earlier preference if you wish.</div>
-
     <div class="choice-wrap">
       <button class="choice-btn" id="final-btn-a" onclick="pickFinal('Option A')">
         <div class="choice-dot"><div class="choice-dot-inner"></div></div>
         <div class="choice-text">
           <div class="choice-title">Option A — High-Growth Stock Fund</div>
-          <div class="choice-desc">14% yearly gain · Very high risk · RM 1,750 fees/year · No extra income</div>
+          <div class="choice-desc">14% yearly gain · Very high risk · $1,750 fees/year · No extra income · Net ~10.5%</div>
         </div>
       </button>
       <button class="choice-btn" id="final-btn-b" onclick="pickFinal('Option B')">
         <div class="choice-dot"><div class="choice-dot-inner"></div></div>
         <div class="choice-text">
           <div class="choice-title">Option B — Steady Growth Fund</div>
-          <div class="choice-desc">9% yearly gain · Low risk · RM 150 fees/year · +RM 1,000 extra/year</div>
+          <div class="choice-desc">9% yearly gain · Low risk · $150 fees/year · +$1,000 extra/year · Net ~10.7%</div>
         </div>
       </button>
     </div>
 
     <hr class="divider">
-
-    <!-- Decision confidence -->
     <div class="question-label">3. How confident are you in your final choice?</div>
     <div class="question-hint">1 = Not at all confident &nbsp;·&nbsp; 7 = Extremely confident</div>
-    <div class="scale-label-row">
-      <span>Not at all confident</span>
-      <span>Extremely confident</span>
-    </div>
+    <div class="scale-label-row"><span>Not at all confident</span><span>Extremely confident</span></div>
     <div class="scale-row">
       <button class="scale-btn" onclick="pickScale('decision_confidence', 1, this)">1</button>
       <button class="scale-btn" onclick="pickScale('decision_confidence', 2, this)">2</button>
@@ -742,51 +300,148 @@
       <button class="scale-btn" onclick="pickScale('decision_confidence', 7, this)">7</button>
     </div>
 
-    <div class="err" id="measure-err">Please answer all three questions before submitting.</div>
+    <div class="err" id="measure-err">Please answer all three questions before continuing.</div>
+    <button class="primary-btn" onclick="goTo('s6', 4)">Continue to Final Questions →</button>
+  </div>
+
+  <!-- S6: DEMOGRAPHICS -->
+  <div class="card" id="s6">
+    <div class="card-title">About You</div>
+    <div class="card-subtitle">A few final questions to help us describe our sample. All responses are anonymous.</div>
+
+    <!-- Age -->
+    <div class="question-label">1. What is your age?</div>
+    <div class="radio-group" id="age-group">
+      <div class="radio-item" onclick="pickRadio('age', 'Under 18', this)"><input type="radio" name="age"><label>Under 18</label></div>
+      <div class="radio-item" onclick="pickRadio('age', '18-25', this)"><input type="radio" name="age"><label>18 to 25</label></div>
+      <div class="radio-item" onclick="pickRadio('age', '26-35', this)"><input type="radio" name="age"><label>26 to 35</label></div>
+      <div class="radio-item" onclick="pickRadio('age', '36-45', this)"><input type="radio" name="age"><label>36 to 45</label></div>
+      <div class="radio-item" onclick="pickRadio('age', '46-55', this)"><input type="radio" name="age"><label>46 to 55</label></div>
+      <div class="radio-item" onclick="pickRadio('age', '56+', this)"><input type="radio" name="age"><label>56 or older</label></div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Gender -->
+    <div class="question-label">2. What is your gender?</div>
+    <div class="radio-group" id="gender-group">
+      <div class="radio-item" onclick="pickRadio('gender', 'Male', this)"><input type="radio" name="gender"><label>Male</label></div>
+      <div class="radio-item" onclick="pickRadio('gender', 'Female', this)"><input type="radio" name="gender"><label>Female</label></div>
+      <div class="radio-item" onclick="pickRadio('gender', 'Non-binary', this)"><input type="radio" name="gender"><label>Non-binary / third gender</label></div>
+      <div class="radio-item" onclick="pickRadio('gender', 'Prefer not to say', this)"><input type="radio" name="gender"><label>Prefer not to say</label></div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Country -->
+    <div class="question-label">3. What is your country of residence?</div>
+    <input type="text" class="text-input" id="country-input" placeholder="e.g. Malaysia, United Kingdom, United States..." oninput="S.country = this.value">
+
+    <hr class="divider">
+
+    <!-- Education -->
+    <div class="question-label">4. What is your highest level of education?</div>
+    <div class="radio-group" id="edu-group">
+      <div class="radio-item" onclick="pickRadio('education', 'High school or below', this)"><input type="radio" name="education"><label>High school or below</label></div>
+      <div class="radio-item" onclick="pickRadio('education', 'Diploma', this)"><input type="radio" name="education"><label>Diploma or equivalent</label></div>
+      <div class="radio-item" onclick="pickRadio('education', 'Bachelor', this)"><input type="radio" name="education"><label>Bachelor's degree</label></div>
+      <div class="radio-item" onclick="pickRadio('education', 'Master', this)"><input type="radio" name="education"><label>Master's degree</label></div>
+      <div class="radio-item" onclick="pickRadio('education', 'PhD', this)"><input type="radio" name="education"><label>Doctoral degree (PhD or equivalent)</label></div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- AI usage -->
+    <div class="question-label">5. How often do you use AI tools such as ChatGPT, Claude, or Gemini?</div>
+    <div class="radio-group" id="aiusage-group">
+      <div class="radio-item" onclick="pickRadio('ai_usage_frequency', 'Never', this)"><input type="radio" name="aiusage"><label>Never</label></div>
+      <div class="radio-item" onclick="pickRadio('ai_usage_frequency', 'Rarely', this)"><input type="radio" name="aiusage"><label>Rarely (a few times a year)</label></div>
+      <div class="radio-item" onclick="pickRadio('ai_usage_frequency', 'Sometimes', this)"><input type="radio" name="aiusage"><label>Sometimes (a few times a month)</label></div>
+      <div class="radio-item" onclick="pickRadio('ai_usage_frequency', 'Often', this)"><input type="radio" name="aiusage"><label>Often (a few times a week)</label></div>
+      <div class="radio-item" onclick="pickRadio('ai_usage_frequency', 'Daily', this)"><input type="radio" name="aiusage"><label>Daily</label></div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- AI financial experience -->
+    <div class="question-label">6. Have you ever used an AI tool for financial advice or investment decisions?</div>
+    <div class="radio-group" id="aifin-group">
+      <div class="radio-item" onclick="pickRadio('ai_financial_experience', 'Yes', this)"><input type="radio" name="aifin"><label>Yes</label></div>
+      <div class="radio-item" onclick="pickRadio('ai_financial_experience', 'No', this)"><input type="radio" name="aifin"><label>No</label></div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- AI trust -->
+    <div class="question-label">7. I trust AI systems to give me accurate advice.</div>
+    <div class="question-hint">1 = Strongly disagree &nbsp;·&nbsp; 7 = Strongly agree</div>
+    <div class="scale-label-row"><span>Strongly disagree</span><span>Strongly agree</span></div>
+    <div class="scale-row">
+      <button class="scale-btn" onclick="pickScale('ai_trust', 1, this)">1</button>
+      <button class="scale-btn" onclick="pickScale('ai_trust', 2, this)">2</button>
+      <button class="scale-btn" onclick="pickScale('ai_trust', 3, this)">3</button>
+      <button class="scale-btn" onclick="pickScale('ai_trust', 4, this)">4</button>
+      <button class="scale-btn" onclick="pickScale('ai_trust', 5, this)">5</button>
+      <button class="scale-btn" onclick="pickScale('ai_trust', 6, this)">6</button>
+      <button class="scale-btn" onclick="pickScale('ai_trust', 7, this)">7</button>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Attention check -->
+    <div class="question-label">8. This is an attention check. Please select the number 4.</div>
+    <div class="question-hint">This helps us ensure data quality.</div>
+    <div class="scale-row">
+      <button class="scale-btn" onclick="pickScale('attention_check', 1, this)">1</button>
+      <button class="scale-btn" onclick="pickScale('attention_check', 2, this)">2</button>
+      <button class="scale-btn" onclick="pickScale('attention_check', 3, this)">3</button>
+      <button class="scale-btn" onclick="pickScale('attention_check', 4, this)">4</button>
+      <button class="scale-btn" onclick="pickScale('attention_check', 5, this)">5</button>
+      <button class="scale-btn" onclick="pickScale('attention_check', 6, this)">6</button>
+      <button class="scale-btn" onclick="pickScale('attention_check', 7, this)">7</button>
+    </div>
+
+    <div class="err" id="demo-err">Please answer all questions before submitting.</div>
     <button class="primary-btn" onclick="submitData()">Submit My Responses →</button>
   </div>
 
-  <!-- ══ SECTION 6: DEBRIEF ══ -->
-  <div class="card" id="s6">
+  <!-- S7: DEBRIEF -->
+  <div class="card" id="s7">
     <div class="thankyou-icon">✓</div>
     <div class="thankyou-title">Thank You!</div>
     <div class="thankyou-sub">Your responses have been recorded successfully.</div>
-
     <div class="debrief-box">
       <h4>About This Study</h4>
       <p>The purpose of this study was to examine how <strong>AI sycophancy</strong> — the tendency of AI systems to agree with users' existing preferences — affects the quality and confidence of financial decisions.</p>
     </div>
-
     <div class="debrief-box">
       <h4>About the AI Advisor You Spoke With</h4>
-      <p>The AI financial advisor was randomly assigned to one of two conditions: one that was designed to <strong>validate and agree with your preference</strong>, and one that was designed to give a <strong>balanced, objective assessment</strong>. You may or may not have received the validating version.</p>
+      <p>The AI financial advisor was randomly assigned to one of two conditions: one designed to <strong>validate and agree with your preference</strong>, and one designed to give a <strong>balanced, objective assessment</strong>. You may or may not have received the validating version.</p>
     </div>
-
     <div class="debrief-highlight">
-      <p><strong>The objectively better choice</strong> based on the data was <strong>Option B (Steady Growth Fund)</strong>. Although Option A shows a higher headline return of 14%, its high annual fees of 3.5% and the absence of any dividend income mean its real net return is lower than Option B when all factors are accounted for.</p>
+      <p><strong>The objectively better choice</strong> based on the data was <strong>Option B (Steady Growth Fund)</strong>. Although Option A shows a higher headline return of 14%, its high annual fees of 3.5% and absence of dividend income mean its real net return (10.5%) is slightly lower than Option B's net return (10.7%), which also carries significantly lower risk.</p>
     </div>
-
     <div class="debrief-box" style="margin-top:16px;">
       <h4>Questions?</h4>
       <p>If you have any questions about this study, please contact the Principal Investigator, Dr Mohammad Dalvi Esfahani, at <a href="mailto:dalvi@utar.edu.my" style="color:#3182ce;">dalvi@utar.edu.my</a> — Universiti Tunku Abdul Rahman (UTAR), Kampar, Malaysia.</p>
     </div>
-
     <p style="text-align:center; margin-top:24px; font-size:14px; color:#718096;">You may now close this window.</p>
   </div>
 
-</div><!-- end shell -->
+</div>
 
 <script>
 const VERCEL_URL = 'https://sycophancy-middleware.vercel.app/api/claude';
 const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyJiNxSLQCs4gqAuxdL4J5Z9vfqipYCiC0wjbe4dpAI9pPFKM10XdthXoAHvCw2C6wIJA/exec';
 
 const STEPS = [
-  { label: 'Step 1 of 6 — Consent',             pct: 10  },
-  { label: 'Step 2 of 6 — Investment Scenario',  pct: 28  },
-  { label: 'Step 3 of 6 — Your Preference',      pct: 46  },
-  { label: 'Step 4 of 6 — AI Advisor',           pct: 64  },
-  { label: 'Step 5 of 6 — Your Responses',       pct: 82  },
-  { label: 'Step 6 of 6 — Complete',             pct: 100 }
+  { label: 'Step 1 of 7 — Consent',              pct: 10  },
+  { label: 'Step 2 of 7 — Investment Scenario',   pct: 24  },
+  { label: 'Step 3 of 7 — Your Preference',       pct: 38  },
+  { label: 'Step 4 of 7 — AI Advisor',            pct: 52  },
+  { label: 'Step 5 of 7 — Your Responses',        pct: 66  },
+  { label: 'Step 6 of 7 — About You',             pct: 82  },
+  { label: 'Step 7 of 7 — Complete',              pct: 100 }
 ];
 
 let S = {
@@ -800,6 +455,14 @@ let S = {
   final_choice: null,
   decision_confidence: null,
   decision_quality: null,
+  age: null,
+  gender: null,
+  country: null,
+  education: null,
+  ai_usage_frequency: null,
+  ai_financial_experience: null,
+  ai_trust: null,
+  attention_check: null,
   start_time: Date.now()
 };
 
@@ -828,8 +491,8 @@ function checkConsent() {
 
 function pickPref(opt) {
   S.initial_preference = opt;
-  document.getElementById('btn-a').className = 'choice-btn' + (opt === 'Option A' ? ' selected' : '');
-  document.getElementById('btn-b').className = 'choice-btn' + (opt === 'Option B' ? ' selected-b' : '');
+  document.getElementById('btn-a').className = 'choice-btn' + (opt === 'Option A' ? ' sel-a' : '');
+  document.getElementById('btn-b').className = 'choice-btn' + (opt === 'Option B' ? ' sel-b' : '');
   document.getElementById('pref-err').style.display = 'none';
   document.getElementById('conf-wrap').style.display = 'block';
   document.getElementById('conf-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -840,25 +503,22 @@ function pickScale(key, val, btn) {
   const row = btn.parentElement;
   row.querySelectorAll('.scale-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  if (key === 'prior_belief_confidence') {
-    document.getElementById('conf-err').style.display = 'none';
-  }
-  if (key === 'manipulation_check' || key === 'decision_confidence') {
-    document.getElementById('measure-err').style.display = 'none';
-  }
+  if (key === 'prior_belief_confidence') document.getElementById('conf-err').style.display = 'none';
+  if (key === 'manipulation_check' || key === 'decision_confidence') document.getElementById('measure-err').style.display = 'none';
+}
+
+function pickRadio(key, val, el) {
+  S[key] = val;
+  const grp = el.parentElement;
+  grp.querySelectorAll('.radio-item').forEach(i => i.classList.remove('active'));
+  el.classList.add('active');
+  el.querySelector('input[type="radio"]').checked = true;
 }
 
 function submitPref() {
-  if (!S.initial_preference) {
-    document.getElementById('pref-err').style.display = 'block';
-    return;
-  }
-  if (!S.prior_belief_confidence) {
-    document.getElementById('conf-err').style.display = 'block';
-    return;
-  }
-  S.factor_b = S.prior_belief_confidence >= 5 ? 'strong' :
-               S.prior_belief_confidence <= 3 ? 'weak' : 'moderate';
+  if (!S.initial_preference) { document.getElementById('pref-err').style.display = 'block'; return; }
+  if (!S.prior_belief_confidence) { document.getElementById('conf-err').style.display = 'block'; return; }
+  S.factor_b = S.prior_belief_confidence >= 5 ? 'strong' : S.prior_belief_confidence <= 3 ? 'weak' : 'moderate';
   goTo('s4', 3);
   callClaude();
 }
@@ -866,8 +526,8 @@ function submitPref() {
 function pickFinal(opt) {
   S.final_choice = opt;
   S.decision_quality = opt === 'Option B' ? 'correct' : 'incorrect';
-  document.getElementById('final-btn-a').className = 'choice-btn' + (opt === 'Option A' ? ' selected' : '');
-  document.getElementById('final-btn-b').className = 'choice-btn' + (opt === 'Option B' ? ' selected-b' : '');
+  document.getElementById('final-btn-a').className = 'choice-btn' + (opt === 'Option A' ? ' sel-a' : '');
+  document.getElementById('final-btn-b').className = 'choice-btn' + (opt === 'Option B' ? ' sel-b' : '');
   document.getElementById('measure-err').style.display = 'none';
 }
 
@@ -889,15 +549,29 @@ async function callClaude() {
     document.getElementById('ai-next-btn').style.display = 'block';
   } catch(e) {
     document.getElementById('loading').style.display = 'none';
-    document.getElementById('ai-text').innerText = 'Unable to load AI response. Please refresh the page and try again.';
+    document.getElementById('ai-text').innerText = 'Unable to load AI response. Please refresh and try again.';
     document.getElementById('ai-box').style.display = 'block';
     document.getElementById('ai-next-btn').style.display = 'block';
   }
 }
 
+function checkMeasure() {
+  if (!S.manipulation_check) { document.getElementById('measure-err').style.display = 'block'; return false; }
+  if (!S.final_choice) { document.getElementById('measure-err').style.display = 'block'; return false; }
+  if (!S.decision_confidence) { document.getElementById('measure-err').style.display = 'block'; return false; }
+  return true;
+}
+
+// Override goTo for s6 to validate measurement first
+const _goTo = goTo;
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.querySelector('#s5 .primary-btn');
+  if (btn) btn.onclick = () => { if (checkMeasure()) _goTo('s6', 5); };
+});
+
 async function submitData() {
-  if (!S.manipulation_check || !S.final_choice || !S.decision_confidence) {
-    document.getElementById('measure-err').style.display = 'block';
+  if (!S.age || !S.gender || !S.country || !S.education || !S.ai_usage_frequency || !S.ai_financial_experience || !S.ai_trust || !S.attention_check) {
+    document.getElementById('demo-err').style.display = 'block';
     return;
   }
   const payload = {
@@ -912,7 +586,15 @@ async function submitData() {
     final_choice: S.final_choice,
     decision_confidence: S.decision_confidence,
     decision_quality: S.decision_quality,
-    completion_time: Math.round((Date.now() - S.start_time) / 1000)
+    completion_time: Math.round((Date.now() - S.start_time) / 1000),
+    age: S.age,
+    gender: S.gender,
+    country: S.country,
+    education: S.education,
+    ai_usage_frequency: S.ai_usage_frequency,
+    ai_financial_experience: S.ai_financial_experience,
+    ai_trust: S.ai_trust,
+    attention_check: S.attention_check
   };
   try {
     await fetch(SHEETS_URL, {
@@ -921,7 +603,7 @@ async function submitData() {
       body: JSON.stringify(payload)
     });
   } catch(e) { console.log(e); }
-  goTo('s6', 5);
+  goTo('s7', 6);
 }
 </script>
 </body>
