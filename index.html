@@ -183,7 +183,6 @@
   <h2>Investment Scenario</h2>
   <p>Please read the following investment information carefully. You will be asked to make a decision based on this data.</p>
   <p>Imagine you have <strong>RM 10,000</strong> to invest. You are considering two options:</p>
-
   <table>
     <tr>
       <th>Criteria</th>
@@ -216,7 +215,6 @@
       <td>Low to moderate</td>
     </tr>
   </table>
-
   <p><strong>Note:</strong> Beta measures sensitivity to market movements. A beta of 1.8 means the fund moves 80% more than the market in both directions. A beta of 0.7 means it moves 30% less than the market.</p>
   <button class="btn" onclick="showSection('s3')">Continue</button>
 </div>
@@ -226,30 +224,26 @@
   <div class="progress"><div class="progress-bar" style="width:40%"></div></div>
   <h2>Your Initial Preference</h2>
   <p>Based on the information you just read, which investment option do you currently prefer?</p>
-
   <div class="option-box" id="box-a" onclick="selectPreference('Option A')">
     <h4>Option A — Technology Growth Fund</h4>
     <p>15% annual return · High volatility · 1.2% expense ratio · No dividend</p>
   </div>
-
   <div class="option-box" id="box-b" onclick="selectPreference('Option B')">
     <h4>Option B — Diversified Index Fund</h4>
     <p>9% annual return · Low volatility · 0.2% expense ratio · 2.1% dividend</p>
   </div>
-
   <p class="error" id="pref-error">Please select an option to continue.</p>
-
   <div id="confidence-section" style="display:none; margin-top:25px;">
     <h3>How confident are you in this preference?</h3>
     <p>1 = Not at all confident, 7 = Extremely confident</p>
     <div class="scale-container" id="confidence-scale">
-      <button class="scale-btn" onclick="selectScale('confidence', 1, this)">1</button>
-      <button class="scale-btn" onclick="selectScale('confidence', 2, this)">2</button>
-      <button class="scale-btn" onclick="selectScale('confidence', 3, this)">3</button>
-      <button class="scale-btn" onclick="selectScale('confidence', 4, this)">4</button>
-      <button class="scale-btn" onclick="selectScale('confidence', 5, this)">5</button>
-      <button class="scale-btn" onclick="selectScale('confidence', 6, this)">6</button>
-      <button class="scale-btn" onclick="selectScale('confidence', 7, this)">7</button>
+      <button class="scale-btn" onclick="selectScale('prior_belief_confidence', 1, this)">1</button>
+      <button class="scale-btn" onclick="selectScale('prior_belief_confidence', 2, this)">2</button>
+      <button class="scale-btn" onclick="selectScale('prior_belief_confidence', 3, this)">3</button>
+      <button class="scale-btn" onclick="selectScale('prior_belief_confidence', 4, this)">4</button>
+      <button class="scale-btn" onclick="selectScale('prior_belief_confidence', 5, this)">5</button>
+      <button class="scale-btn" onclick="selectScale('prior_belief_confidence', 6, this)">6</button>
+      <button class="scale-btn" onclick="selectScale('prior_belief_confidence', 7, this)">7</button>
     </div>
     <div class="scale-labels">
       <span>Not at all confident</span>
@@ -265,17 +259,14 @@
   <div class="progress"><div class="progress-bar" style="width:60%"></div></div>
   <h2>AI Financial Advisor Assessment</h2>
   <p>An AI financial advisor has reviewed your investment preference and the data above. Please read the assessment carefully.</p>
-
   <div class="loading" id="loading">
     <div class="spinner"></div>
     <p>AI advisor is generating your assessment...</p>
   </div>
-
   <div class="ai-response" id="ai-response" style="display:none;">
     <div class="ai-label">AI Financial Advisor:</div>
     <div id="ai-text"></div>
   </div>
-
   <button class="btn" id="continue-btn" onclick="showSection('s5')" style="display:none;">Continue to Questions</button>
 </div>
 
@@ -283,23 +274,21 @@
 <div class="section" id="s5">
   <div class="progress"><div class="progress-bar" style="width:80%"></div></div>
   <h2>Questions</h2>
-
   <h3>1. To what extent did the AI advisor agree with your initial investment preference?</h3>
   <p>1 = Did not agree at all, 7 = Completely agreed</p>
   <div class="scale-container">
-    <button class="scale-btn" onclick="selectScale('manipulation', 1, this)">1</button>
-    <button class="scale-btn" onclick="selectScale('manipulation', 2, this)">2</button>
-    <button class="scale-btn" onclick="selectScale('manipulation', 3, this)">3</button>
-    <button class="scale-btn" onclick="selectScale('manipulation', 4, this)">4</button>
-    <button class="scale-btn" onclick="selectScale('manipulation', 5, this)">5</button>
-    <button class="scale-btn" onclick="selectScale('manipulation', 6, this)">6</button>
-    <button class="scale-btn" onclick="selectScale('manipulation', 7, this)">7</button>
+    <button class="scale-btn" onclick="selectScale('manipulation_check', 1, this)">1</button>
+    <button class="scale-btn" onclick="selectScale('manipulation_check', 2, this)">2</button>
+    <button class="scale-btn" onclick="selectScale('manipulation_check', 3, this)">3</button>
+    <button class="scale-btn" onclick="selectScale('manipulation_check', 4, this)">4</button>
+    <button class="scale-btn" onclick="selectScale('manipulation_check', 5, this)">5</button>
+    <button class="scale-btn" onclick="selectScale('manipulation_check', 6, this)">6</button>
+    <button class="scale-btn" onclick="selectScale('manipulation_check', 7, this)">7</button>
   </div>
   <div class="scale-labels">
     <span>Did not agree at all</span>
     <span>Completely agreed</span>
   </div>
-
   <h3 style="margin-top:30px;">2. After reading the AI advisor's assessment, which option do you now choose?</h3>
   <div class="option-box" id="final-box-a" onclick="selectFinal('Option A')">
     <h4>Option A — Technology Growth Fund</h4>
@@ -309,23 +298,21 @@
     <h4>Option B — Diversified Index Fund</h4>
     <p>9% annual return · Low volatility · 0.2% expense ratio · 2.1% dividend</p>
   </div>
-
   <h3 style="margin-top:30px;">3. How confident are you in your final investment choice?</h3>
   <p>1 = Not at all confident, 7 = Extremely confident</p>
   <div class="scale-container">
-    <button class="scale-btn" onclick="selectScale('final_confidence', 1, this)">1</button>
-    <button class="scale-btn" onclick="selectScale('final_confidence', 2, this)">2</button>
-    <button class="scale-btn" onclick="selectScale('final_confidence', 3, this)">3</button>
-    <button class="scale-btn" onclick="selectScale('final_confidence', 4, this)">4</button>
-    <button class="scale-btn" onclick="selectScale('final_confidence', 5, this)">5</button>
-    <button class="scale-btn" onclick="selectScale('final_confidence', 6, this)">6</button>
-    <button class="scale-btn" onclick="selectScale('final_confidence', 7, this)">7</button>
+    <button class="scale-btn" onclick="selectScale('decision_confidence', 1, this)">1</button>
+    <button class="scale-btn" onclick="selectScale('decision_confidence', 2, this)">2</button>
+    <button class="scale-btn" onclick="selectScale('decision_confidence', 3, this)">3</button>
+    <button class="scale-btn" onclick="selectScale('decision_confidence', 4, this)">4</button>
+    <button class="scale-btn" onclick="selectScale('decision_confidence', 5, this)">5</button>
+    <button class="scale-btn" onclick="selectScale('decision_confidence', 6, this)">6</button>
+    <button class="scale-btn" onclick="selectScale('decision_confidence', 7, this)">7</button>
   </div>
   <div class="scale-labels">
     <span>Not at all confident</span>
     <span>Extremely confident</span>
   </div>
-
   <p class="error" id="measure-error">Please answer all questions before continuing.</p>
   <button class="btn" onclick="submitData()">Submit Responses</button>
 </div>
@@ -337,8 +324,8 @@
     <h2>Thank You for Participating</h2>
     <p>Your responses have been recorded successfully.</p>
     <h3>Debriefing Information</h3>
-    <p>The purpose of this study was to examine how AI sycophancy — the tendency of AI systems to agree with users' existing preferences — affects financial decision quality and confidence.</p>
-    <p>The AI financial advisor you interacted with was randomly assigned to one of two conditions: one that validated your preference, and one that provided balanced analysis. You may or may not have received the validating version.</p>
+    <p>The purpose of this study was to examine how AI sycophancy affects financial decision quality and confidence.</p>
+    <p>The AI financial advisor you interacted with was randomly assigned to one of two conditions: one that validated your preference, and one that provided balanced analysis.</p>
     <p>In reality, <strong>Option B (Diversified Index Fund)</strong> is the objectively superior choice based on the data provided, due to its lower expense ratio, lower volatility, dividend yield, and competitive risk-adjusted return.</p>
     <p>If you have any questions about this study, please contact the research team at UTAR.</p>
     <p style="margin-top:30px; font-weight:bold;">You may now close this window.</p>
@@ -346,12 +333,9 @@
 </div>
 
 <script>
-// ─── CONFIGURATION ─────────────────────────────────────────────
 const VERCEL_URL = 'https://sycophancy-middleware.vercel.app/api/claude';
 const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyJiNxSLQCs4gqAuxdL4J5Z9vfqipYCiC0wjbe4dpAI9pPFKM10XdthXoAHvCw2C6wIJA/exec';
-// ───────────────────────────────────────────────────────────────
 
-// State
 let state = {
   participant_id: 'P' + Date.now(),
   condition: Math.random() < 0.5 ? 'sycophantic' : 'non-sycophantic',
@@ -396,6 +380,12 @@ function selectScale(key, value, btn) {
   const container = btn.parentElement;
   container.querySelectorAll('.scale-btn').forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
+  if (key === 'prior_belief_confidence') {
+    document.getElementById('conf-error').style.display = 'none';
+  }
+  if (key === 'manipulation_check' || key === 'decision_confidence') {
+    document.getElementById('measure-error').style.display = 'none';
+  }
 }
 
 function submitPreference() {
@@ -407,8 +397,7 @@ function submitPreference() {
     document.getElementById('conf-error').style.display = 'block';
     return;
   }
-  // Determine Factor B
-  state.factor_b = state.prior_belief_confidence >= 5 ? 'strong' : 
+  state.factor_b = state.prior_belief_confidence >= 5 ? 'strong' :
                    state.prior_belief_confidence <= 3 ? 'weak' : 'moderate';
   showSection('s4');
   callClaude();
@@ -418,15 +407,14 @@ function selectFinal(option) {
   state.final_choice = option;
   document.getElementById('final-box-a').classList.toggle('selected', option === 'Option A');
   document.getElementById('final-box-b').classList.toggle('selected', option === 'Option B');
-  // Decision quality: Option B is objectively correct
   state.decision_quality = option === 'Option B' ? 'correct' : 'incorrect';
+  document.getElementById('measure-error').style.display = 'none';
 }
 
 async function callClaude() {
   document.getElementById('loading').style.display = 'block';
   document.getElementById('ai-response').style.display = 'none';
   document.getElementById('continue-btn').style.display = 'none';
-
   try {
     const response = await fetch(VERCEL_URL, {
       method: 'POST',
@@ -463,9 +451,7 @@ async function submitData() {
     document.getElementById('measure-error').style.display = 'block';
     return;
   }
-
   const completion_time = Math.round((Date.now() - state.start_time) / 1000);
-
   const payload = {
     timestamp: new Date().toISOString(),
     participant_id: state.participant_id,
@@ -480,7 +466,6 @@ async function submitData() {
     decision_quality: state.decision_quality,
     completion_time: completion_time
   };
-
   try {
     await fetch(SHEETS_URL, {
       method: 'POST',
@@ -491,7 +476,6 @@ async function submitData() {
   } catch(e) {
     console.log('Sheet save error:', e);
   }
-
   showSection('s6');
 }
 </script>
