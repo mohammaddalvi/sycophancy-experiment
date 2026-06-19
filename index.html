@@ -76,6 +76,7 @@
   .divider { border: none; border-top: 1px solid #e2e8f0; margin: 28px 0; }
   .question-label { font-size: 15px; font-weight: 600; color: #2d3748; margin-bottom: 6px; }
   .question-hint { font-size: 13px; color: #718096; margin-bottom: 16px; line-height: 1.5; }
+  .question-block { margin-bottom: 24px; }
   .btn-row { display: flex; gap: 12px; margin-top: 28px; }
   .primary-btn { flex: 1; padding: 16px; background: #3182ce; color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s; letter-spacing: 0.3px; }
   .primary-btn:hover { background: #2c5282; }
@@ -155,7 +156,7 @@
     <div class="card-title">Investment Scenario</div>
     <div class="card-subtitle">Please read the following carefully before making your decision.</div>
     <div class="scenario-intro">
-      <p>Imagine you have <strong>$50,000</strong> in savings and want to invest it for <strong>3 years</strong>. A financial platform offers you two options. Review the details below.</p>
+      <p>Imagine you have <strong>$50,000</strong> in savings and want to invest it for <strong>3 years</strong>. A financial platform offers you two options. Review the details below carefully.</p>
     </div>
     <div class="compare-grid">
       <div class="option-card option-a">
@@ -164,9 +165,8 @@
           <div class="row"><span class="label">Average yearly gain</span><span class="value">14%</span></div>
           <div class="row"><span class="label">Risk level</span><span class="value"><span class="tag tag-red">Very High</span></span></div>
           <div class="row"><span class="label">Annual fees</span><span class="value">3.5% / year</span></div>
-          <div class="row"><span class="label">Extra income</span><span class="value">None</span></div>
-          <div class="row"><span class="label">Fees on $50,000</span><span class="value">$1,750 / year</span></div>
-          <div class="row"><span class="label">Net return after fees</span><span class="value">~10.5% / year</span></div>
+          <div class="row"><span class="label">Annual fees on $50,000</span><span class="value">$1,750 / year</span></div>
+          <div class="row"><span class="label">Extra income paid to you</span><span class="value">None</span></div>
         </div>
       </div>
       <div class="option-card option-b">
@@ -175,14 +175,13 @@
           <div class="row"><span class="label">Average yearly gain</span><span class="value">9%</span></div>
           <div class="row"><span class="label">Risk level</span><span class="value"><span class="tag tag-green">Low</span></span></div>
           <div class="row"><span class="label">Annual fees</span><span class="value">0.3% / year</span></div>
-          <div class="row"><span class="label">Extra income</span><span class="value">+2% / year</span></div>
-          <div class="row"><span class="label">Fees on $50,000</span><span class="value">$150 / year</span></div>
-          <div class="row"><span class="label">Net return after fees</span><span class="value">~10.7% / year</span></div>
+          <div class="row"><span class="label">Annual fees on $50,000</span><span class="value">$150 / year</span></div>
+          <div class="row"><span class="label">Extra income paid to you</span><span class="value">+2% / year ($1,000)</span></div>
         </div>
       </div>
     </div>
     <div class="fee-note">
-      <p><strong>What do fees mean?</strong> Every year, the platform deducts a percentage of your investment as a service charge. Option A deducts <strong>$1,750</strong> from your account each year. Option B deducts only <strong>$150</strong> per year — and also pays you an extra <strong>$1,000</strong> annually from the fund.</p>
+      <p><strong>Important:</strong> Annual fees are deducted from your investment each year. Option A charges <strong>$1,750 per year</strong> in fees. Option B charges only <strong>$150 per year</strong> in fees and also pays you an extra <strong>$1,000 per year</strong> from the fund. Consider all factors carefully before making your decision.</p>
     </div>
     <div class="btn-row">
       <button class="back-btn" onclick="goTo('s1', 0)">← Back</button>
@@ -199,14 +198,14 @@
         <div class="choice-dot"><div class="choice-dot-inner"></div></div>
         <div class="choice-text">
           <div class="choice-title">Option A — High-Growth Stock Fund</div>
-          <div class="choice-desc">14% yearly gain · Very high risk · $1,750 fees/year · No extra income · Net ~10.5%</div>
+          <div class="choice-desc">14% yearly gain · Very high risk · $1,750 fees/year · No extra income</div>
         </div>
       </button>
       <button class="choice-btn" id="btn-b" onclick="pickPref('Option B')">
         <div class="choice-dot"><div class="choice-dot-inner"></div></div>
         <div class="choice-text">
           <div class="choice-title">Option B — Steady Growth Fund</div>
-          <div class="choice-desc">9% yearly gain · Low risk · $150 fees/year · +$1,000 extra/year · Net ~10.7%</div>
+          <div class="choice-desc">9% yearly gain · Low risk · $150 fees/year · +$1,000 extra/year</div>
         </div>
       </button>
     </div>
@@ -265,54 +264,97 @@
     <div class="card-title">Your Responses</div>
     <div class="card-subtitle">Please answer the following questions honestly based on your experience.</div>
 
-    <div class="question-label">1. To what extent did the AI advisor agree with your initial investment preference?</div>
-    <div class="question-hint">1 = Did not agree at all &nbsp;·&nbsp; 7 = Completely agreed with my preference</div>
-    <div class="scale-label-row"><span>Did not agree at all</span><span>Completely agreed</span></div>
-    <div class="scale-row">
-      <button class="scale-btn" onclick="pickScale('manipulation_check', 1, this)">1</button>
-      <button class="scale-btn" onclick="pickScale('manipulation_check', 2, this)">2</button>
-      <button class="scale-btn" onclick="pickScale('manipulation_check', 3, this)">3</button>
-      <button class="scale-btn" onclick="pickScale('manipulation_check', 4, this)">4</button>
-      <button class="scale-btn" onclick="pickScale('manipulation_check', 5, this)">5</button>
-      <button class="scale-btn" onclick="pickScale('manipulation_check', 6, this)">6</button>
-      <button class="scale-btn" onclick="pickScale('manipulation_check', 7, this)">7</button>
+    <!-- Manipulation check -->
+    <div class="question-block">
+      <div class="question-label">1. To what extent did the AI advisor agree with your initial investment preference?</div>
+      <div class="question-hint">1 = Did not agree at all &nbsp;·&nbsp; 7 = Completely agreed with my preference</div>
+      <div class="scale-label-row"><span>Did not agree at all</span><span>Completely agreed</span></div>
+      <div class="scale-row">
+        <button class="scale-btn" onclick="pickScale('manipulation_check', 1, this)">1</button>
+        <button class="scale-btn" onclick="pickScale('manipulation_check', 2, this)">2</button>
+        <button class="scale-btn" onclick="pickScale('manipulation_check', 3, this)">3</button>
+        <button class="scale-btn" onclick="pickScale('manipulation_check', 4, this)">4</button>
+        <button class="scale-btn" onclick="pickScale('manipulation_check', 5, this)">5</button>
+        <button class="scale-btn" onclick="pickScale('manipulation_check', 6, this)">6</button>
+        <button class="scale-btn" onclick="pickScale('manipulation_check', 7, this)">7</button>
+      </div>
     </div>
 
     <hr class="divider">
-    <div class="question-label">2. After reading the AI advisor's assessment, which option do you now choose?</div>
-    <div class="question-hint">You may change your earlier preference if you wish.</div>
-    <div class="choice-wrap">
-      <button class="choice-btn" id="final-btn-a" onclick="pickFinal('Option A')">
-        <div class="choice-dot"><div class="choice-dot-inner"></div></div>
-        <div class="choice-text">
-          <div class="choice-title">Option A — High-Growth Stock Fund</div>
-          <div class="choice-desc">14% yearly gain · Very high risk · $1,750 fees/year · No extra income · Net ~10.5%</div>
-        </div>
-      </button>
-      <button class="choice-btn" id="final-btn-b" onclick="pickFinal('Option B')">
-        <div class="choice-dot"><div class="choice-dot-inner"></div></div>
-        <div class="choice-text">
-          <div class="choice-title">Option B — Steady Growth Fund</div>
-          <div class="choice-desc">9% yearly gain · Low risk · $150 fees/year · +$1,000 extra/year · Net ~10.7%</div>
-        </div>
-      </button>
+
+    <!-- Final choice -->
+    <div class="question-block">
+      <div class="question-label">2. After reading the AI advisor's assessment, which option do you now choose?</div>
+      <div class="question-hint">You may change your earlier preference if you wish.</div>
+      <div class="choice-wrap" style="margin-top:12px;">
+        <button class="choice-btn" id="final-btn-a" onclick="pickFinal('Option A')">
+          <div class="choice-dot"><div class="choice-dot-inner"></div></div>
+          <div class="choice-text">
+            <div class="choice-title">Option A — High-Growth Stock Fund</div>
+            <div class="choice-desc">14% yearly gain · Very high risk · $1,750 fees/year · No extra income</div>
+          </div>
+        </button>
+        <button class="choice-btn" id="final-btn-b" onclick="pickFinal('Option B')">
+          <div class="choice-dot"><div class="choice-dot-inner"></div></div>
+          <div class="choice-text">
+            <div class="choice-title">Option B — Steady Growth Fund</div>
+            <div class="choice-desc">9% yearly gain · Low risk · $150 fees/year · +$1,000 extra/year</div>
+          </div>
+        </button>
+      </div>
     </div>
 
     <hr class="divider">
-    <div class="question-label">3. How confident are you in your final choice?</div>
-    <div class="question-hint">1 = Not at all confident &nbsp;·&nbsp; 7 = Extremely confident</div>
-    <div class="scale-label-row"><span>Not at all confident</span><span>Extremely confident</span></div>
-    <div class="scale-row">
-      <button class="scale-btn" onclick="pickScale('decision_confidence', 1, this)">1</button>
-      <button class="scale-btn" onclick="pickScale('decision_confidence', 2, this)">2</button>
-      <button class="scale-btn" onclick="pickScale('decision_confidence', 3, this)">3</button>
-      <button class="scale-btn" onclick="pickScale('decision_confidence', 4, this)">4</button>
-      <button class="scale-btn" onclick="pickScale('decision_confidence', 5, this)">5</button>
-      <button class="scale-btn" onclick="pickScale('decision_confidence', 6, this)">6</button>
-      <button class="scale-btn" onclick="pickScale('decision_confidence', 7, this)">7</button>
+
+    <!-- Decision confidence — 3 items -->
+    <div class="question-block">
+      <div class="question-label">3. Please rate your agreement with each statement about your final choice.</div>
+      <div class="question-hint">1 = Strongly disagree &nbsp;·&nbsp; 7 = Strongly agree</div>
+
+      <div style="margin-bottom:20px;">
+        <div style="font-size:14px; color:#2d3748; margin-bottom:10px; font-style:italic;">a. I am confident in my final investment choice.</div>
+        <div class="scale-label-row"><span>Strongly disagree</span><span>Strongly agree</span></div>
+        <div class="scale-row">
+          <button class="scale-btn" onclick="pickScale('decision_confidence', 1, this)">1</button>
+          <button class="scale-btn" onclick="pickScale('decision_confidence', 2, this)">2</button>
+          <button class="scale-btn" onclick="pickScale('decision_confidence', 3, this)">3</button>
+          <button class="scale-btn" onclick="pickScale('decision_confidence', 4, this)">4</button>
+          <button class="scale-btn" onclick="pickScale('decision_confidence', 5, this)">5</button>
+          <button class="scale-btn" onclick="pickScale('decision_confidence', 6, this)">6</button>
+          <button class="scale-btn" onclick="pickScale('decision_confidence', 7, this)">7</button>
+        </div>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <div style="font-size:14px; color:#2d3748; margin-bottom:10px; font-style:italic;">b. I am certain that I made the right decision.</div>
+        <div class="scale-label-row"><span>Strongly disagree</span><span>Strongly agree</span></div>
+        <div class="scale-row">
+          <button class="scale-btn" onclick="pickScale('decision_confidence_2', 1, this)">1</button>
+          <button class="scale-btn" onclick="pickScale('decision_confidence_2', 2, this)">2</button>
+          <button class="scale-btn" onclick="pickScale('decision_confidence_2', 3, this)">3</button>
+          <button class="scale-btn" onclick="pickScale('decision_confidence_2', 4, this)">4</button>
+          <button class="scale-btn" onclick="pickScale('decision_confidence_2', 5, this)">5</button>
+          <button class="scale-btn" onclick="pickScale('decision_confidence_2', 6, this)">6</button>
+          <button class="scale-btn" onclick="pickScale('decision_confidence_2', 7, this)">7</button>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:14px; color:#2d3748; margin-bottom:10px; font-style:italic;">c. I am sure about the quality of my final choice.</div>
+        <div class="scale-label-row"><span>Strongly disagree</span><span>Strongly agree</span></div>
+        <div class="scale-row">
+          <button class="scale-btn" onclick="pickScale('decision_confidence_3', 1, this)">1</button>
+          <button class="scale-btn" onclick="pickScale('decision_confidence_3', 2, this)">2</button>
+          <button class="scale-btn" onclick="pickScale('decision_confidence_3', 3, this)">3</button>
+          <button class="scale-btn" onclick="pickScale('decision_confidence_3', 4, this)">4</button>
+          <button class="scale-btn" onclick="pickScale('decision_confidence_3', 5, this)">5</button>
+          <button class="scale-btn" onclick="pickScale('decision_confidence_3', 6, this)">6</button>
+          <button class="scale-btn" onclick="pickScale('decision_confidence_3', 7, this)">7</button>
+        </div>
+      </div>
     </div>
 
-    <div class="err" id="measure-err">Please answer all three questions before continuing.</div>
+    <div class="err" id="measure-err">Please answer all questions before continuing.</div>
     <div class="btn-row">
       <button class="back-btn" onclick="goTo('s4', 3)">← Back</button>
       <button class="primary-btn" onclick="checkMeasureAndContinue()">Continue to Final Questions →</button>
@@ -345,7 +387,7 @@
 
     <hr class="divider">
     <div class="question-label">3. What is your country of residence?</div>
-    <input type="text" class="text-input" id="country-input" placeholder="e.g. Malaysia, United Kingdom, United States..." oninput="S.country = this.value">
+    <input type="text" class="text-input" id="country-input" placeholder="e.g. Malaysia, United Kingdom, United States...">
 
     <hr class="divider">
     <div class="question-label">4. What is your highest level of education?</div>
@@ -358,7 +400,17 @@
     </div>
 
     <hr class="divider">
-    <div class="question-label">5. How often do you use AI tools such as ChatGPT, Claude, or Gemini?</div>
+    <div class="question-label">5. How would you describe your investment experience?</div>
+    <div class="radio-group" id="invest-group">
+      <div class="radio-item" onclick="pickRadio('investment_experience', 'No experience', this)"><input type="radio" name="invest"><label>No experience — I have never invested</label></div>
+      <div class="radio-item" onclick="pickRadio('investment_experience', 'Beginner', this)"><input type="radio" name="invest"><label>Beginner — I have some basic knowledge</label></div>
+      <div class="radio-item" onclick="pickRadio('investment_experience', 'Intermediate', this)"><input type="radio" name="invest"><label>Intermediate — I have made investments before</label></div>
+      <div class="radio-item" onclick="pickRadio('investment_experience', 'Experienced', this)"><input type="radio" name="invest"><label>Experienced — I invest regularly</label></div>
+      <div class="radio-item" onclick="pickRadio('investment_experience', 'Expert', this)"><input type="radio" name="invest"><label>Expert — I am a finance professional</label></div>
+    </div>
+
+    <hr class="divider">
+    <div class="question-label">6. How often do you use AI tools such as ChatGPT, Claude, or Gemini?</div>
     <div class="radio-group" id="aiusage-group">
       <div class="radio-item" onclick="pickRadio('ai_usage_frequency', 'Never', this)"><input type="radio" name="aiusage"><label>Never</label></div>
       <div class="radio-item" onclick="pickRadio('ai_usage_frequency', 'Rarely', this)"><input type="radio" name="aiusage"><label>Rarely (a few times a year)</label></div>
@@ -368,14 +420,14 @@
     </div>
 
     <hr class="divider">
-    <div class="question-label">6. Have you ever used an AI tool for financial advice or investment decisions?</div>
+    <div class="question-label">7. Have you ever used an AI tool for financial advice or investment decisions?</div>
     <div class="radio-group" id="aifin-group">
       <div class="radio-item" onclick="pickRadio('ai_financial_experience', 'Yes', this)"><input type="radio" name="aifin"><label>Yes</label></div>
       <div class="radio-item" onclick="pickRadio('ai_financial_experience', 'No', this)"><input type="radio" name="aifin"><label>No</label></div>
     </div>
 
     <hr class="divider">
-    <div class="question-label">7. I trust AI systems to give me accurate advice.</div>
+    <div class="question-label">8. I trust AI systems to give me accurate advice.</div>
     <div class="question-hint">1 = Strongly disagree &nbsp;·&nbsp; 7 = Strongly agree</div>
     <div class="scale-label-row"><span>Strongly disagree</span><span>Strongly agree</span></div>
     <div class="scale-row">
@@ -389,7 +441,21 @@
     </div>
 
     <hr class="divider">
-    <div class="question-label">8. This is an attention check. Please select the number 4.</div>
+    <div class="question-label">9. Thinking back to before you read the AI advisor's assessment — how strongly did you hold your initial investment preference?</div>
+    <div class="question-hint">1 = I had no strong preference &nbsp;·&nbsp; 7 = I held my preference very strongly</div>
+    <div class="scale-label-row"><span>No strong preference</span><span>Very strong preference</span></div>
+    <div class="scale-row">
+      <button class="scale-btn" onclick="pickScale('factor_b_check', 1, this)">1</button>
+      <button class="scale-btn" onclick="pickScale('factor_b_check', 2, this)">2</button>
+      <button class="scale-btn" onclick="pickScale('factor_b_check', 3, this)">3</button>
+      <button class="scale-btn" onclick="pickScale('factor_b_check', 4, this)">4</button>
+      <button class="scale-btn" onclick="pickScale('factor_b_check', 5, this)">5</button>
+      <button class="scale-btn" onclick="pickScale('factor_b_check', 6, this)">6</button>
+      <button class="scale-btn" onclick="pickScale('factor_b_check', 7, this)">7</button>
+    </div>
+
+    <hr class="divider">
+    <div class="question-label">10. This is an attention check. Please select the number 4.</div>
     <div class="question-hint">This helps us ensure data quality.</div>
     <div class="scale-row">
       <button class="scale-btn" onclick="pickScale('attention_check', 1, this)">1</button>
@@ -422,7 +488,7 @@
       <p>The AI financial advisor was randomly assigned to one of two conditions: one designed to <strong>validate and agree with your preference</strong>, and one designed to give a <strong>balanced, objective assessment</strong>. You may or may not have received the validating version.</p>
     </div>
     <div class="debrief-highlight">
-      <p><strong>The objectively better choice</strong> based on the data was <strong>Option B (Steady Growth Fund)</strong>. Although Option A shows a higher headline return of 14%, its high annual fees of 3.5% and absence of dividend income mean its real net return (10.5%) is slightly lower than Option B's net return (10.7%), which also carries significantly lower risk.</p>
+      <p><strong>The objectively better choice</strong> based on the data was <strong>Option B (Steady Growth Fund)</strong>. Although Option A shows a higher headline return of 14%, its annual fees of 3.5% ($1,750/year) and absence of dividend income mean its real net return is lower than Option B once fees and the 2% dividend income are properly accounted for. Option B also carries significantly lower risk.</p>
     </div>
     <div class="debrief-box" style="margin-top:16px;">
       <h4>Questions?</h4>
@@ -457,10 +523,13 @@ let S = {
   manipulation_check: null,
   final_choice: null,
   decision_confidence: null,
+  decision_confidence_2: null,
+  decision_confidence_3: null,
   decision_quality: null,
   age: null, gender: null, country: null, education: null,
+  investment_experience: null,
   ai_usage_frequency: null, ai_financial_experience: null,
-  ai_trust: null, attention_check: null,
+  ai_trust: null, factor_b_check: null, attention_check: null,
   start_time: Date.now()
 };
 
@@ -500,7 +569,9 @@ function pickScale(key, val, btn) {
   row.querySelectorAll('.scale-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   if (key === 'prior_belief_confidence') document.getElementById('conf-err').style.display = 'none';
-  if (key === 'manipulation_check' || key === 'decision_confidence') document.getElementById('measure-err').style.display = 'none';
+  if (['manipulation_check','decision_confidence','decision_confidence_2','decision_confidence_3'].includes(key)) {
+    document.getElementById('measure-err').style.display = 'none';
+  }
 }
 
 function pickRadio(key, val, el) {
@@ -555,15 +626,17 @@ async function callClaude() {
 }
 
 function checkMeasureAndContinue() {
-  if (!S.manipulation_check || !S.final_choice || !S.decision_confidence) {
+  if (!S.manipulation_check || !S.final_choice || !S.decision_confidence || !S.decision_confidence_2 || !S.decision_confidence_3) {
     document.getElementById('measure-err').style.display = 'block'; return;
   }
   goTo('s6', 5);
 }
 
 async function submitData() {
-  S.country = document.getElementById('country-input').value;
-  if (!S.age || !S.gender || !S.country || !S.education || !S.ai_usage_frequency || !S.ai_financial_experience || !S.ai_trust || !S.attention_check) {
+  S.country = document.getElementById('country-input').value.trim();
+  if (!S.age || !S.gender || !S.country || !S.education || !S.investment_experience ||
+      !S.ai_usage_frequency || !S.ai_financial_experience || !S.ai_trust ||
+      !S.factor_b_check || !S.attention_check) {
     document.getElementById('demo-err').style.display = 'block'; return;
   }
   const payload = {
@@ -583,7 +656,10 @@ async function submitData() {
     ai_usage_frequency: S.ai_usage_frequency,
     ai_financial_experience: S.ai_financial_experience,
     ai_trust: S.ai_trust,
-    attention_check: S.attention_check
+    attention_check: S.attention_check,
+    decision_confidence_2: S.decision_confidence_2,
+    decision_confidence_3: S.decision_confidence_3,
+    factor_b_check: S.factor_b_check
   };
   try {
     await fetch(SHEETS_URL, {
